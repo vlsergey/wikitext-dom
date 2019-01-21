@@ -1,0 +1,64 @@
+{
+  "name": "wikitext-dom",
+  "version": "0.0.1",
+  "description": "Document Object Model for MediaWiki Wikitext XML",
+  "main": "lib/wikitext-dom.js",
+  "scripts": {
+    "build": "webpack --env dev && webpack --env build && npm run test",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "karma start karma.conf.js",
+    "test:watch": "karma start karma.conf.js --no-single-run",
+    "repl": "node -i -e \"$(< ./lib/wikitext-dom.js)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlsergey/wikitext-dom.git"
+  },
+  "keywords": [
+    "javascript",
+    "mediawiki",
+    "wikitext",
+    "dom"
+  ],
+  "author": "Sergey Vladimirov a.k.a. vlsergey (vlsergey {at} gmail {dot} com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vlsergey/wikitext-dom/issues"
+  },
+  "homepage": "https://github.com/vlsergey/wikitext-dom#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.12.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "jsdom": "^13.1.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jsdom-launcher": "^7.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^3.0.5",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.2.0",
+    "expect": "^1.20.2"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  }
+}
