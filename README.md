@@ -7,11 +7,13 @@ JavaScript library for working with Wikitext XML of wikitext content model.
 ## Starter example
 
 ```js
+  import { Parser, Template } from 'wikitext-dom';
+
   // XML String from MediaWiki API
   // {{templateName|argName=argValue}}
   const xmlContent = '<root><template><title>templateName</title><part><name>argName</name><equals>=</equals><value>argValue</value></part></template></root>';
   // XML DOM from browser API
-  const doc = new DOMParser().parseFromString( sourceXml, 'application/xml' );
+  const doc = new DOMParser().parseFromString( xmlContent, 'application/xml' );
   // Document model to work with
   const dom = new Parser().parseDocument( doc );
 
