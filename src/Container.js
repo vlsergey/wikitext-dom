@@ -29,6 +29,14 @@ export default class Container extends WikiDomNode {
       : childResults;
   }
 
+  getChildByClassAsString( cls ) {
+    expect( cls ).toBeA( 'function' );
+    const child = this.children.find( c => c instanceof cls );
+    if ( child ) {
+      return child.getTextIfOnlyText();
+    }
+  }
+
   getTextIfOnlyText() {
     if ( this.children.some( child => !( child instanceof TextNode ) ) ) return null;
     return this.children.map( child => child.value ).join( '' );

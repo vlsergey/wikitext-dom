@@ -127,11 +127,7 @@ export class TemplateArgumentPart extends Container {
   }
 
   getNameAsString() {
-    const name = this.children
-      .find( child => child instanceof TemplateArgumentPartName );
-    if ( name ) {
-      return name.getTextIfOnlyText();
-    }
+    return this.getChildByClassAsString( TemplateArgumentPartName );
   }
 
   setNameAsNode( wikiDomNode ) {
@@ -155,10 +151,7 @@ export class TemplateArgumentPart extends Container {
   }
 
   getValueAsString() {
-    const value = this.getValueAsNode();
-    if ( value ) {
-      return value.getTextIfOnlyText();
-    }
+    return this.getChildByClassAsString( TemplateArgumentPartValue );
   }
 
   setValueAsNode( wikiDomNode ) {

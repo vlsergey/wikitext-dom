@@ -38,6 +38,18 @@ export default class Extension extends Container {
     return new Extension( children );
   }
 
+  getCloseAsString() {
+    return this.getChildByClassAsString( ExtensionClose );
+  }
+
+  getNameAsString() {
+    return this.getChildByClassAsString( ExtensionName );
+  }
+
+  getInnerAsString() {
+    return this.getChildByClassAsString( ExtensionInner );
+  }
+
   toWikitext( stripComments ) {
     const f = child => child.toWikitext( stripComments );
 
