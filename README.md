@@ -41,3 +41,16 @@ JavaScript library for working with Wikitext XML of wikitext content model.
 * ```root``` (JavaScript class ```Root```)
 * ```template``` (JavaScript class ```Template```)
 * ```tplarg``` (JavaScript class ```TemplateArgument```)
+
+## Cookbook
+
+### Extract plot data from timeline
+```js
+const plotDataLines = dom.getChildByClass( Extension )
+  .filter( ext => ext.getNameAsString() === 'timeline' )
+  .map( tl => tl.getInnerAsString() )
+  .filter( inner => !!inner )
+  .flatMap( inner => inner.split('\n') )
+  .map( line => line.trim() )
+  .filter( line => line.match(/^bar\:(\d+) from\:0 till:(\d+)$/) );
+```
