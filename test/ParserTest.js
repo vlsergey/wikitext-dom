@@ -1,4 +1,8 @@
+import assert from 'assert';
 import Parser from 'Parser';
+
+import wkt67865563 from './ruwiki/r67865563.wikitext';
+import xml67865563 from './ruwiki/r67865563.xml';
 
 describe( 'Parser', () => {
 
@@ -14,6 +18,12 @@ describe( 'Parser', () => {
 
     const doc = new DOMParser().parseFromString( sourceXml, 'application/xml' );
     new Parser().parseDocument( doc );
+  } );
+
+  it ( 'Can parse and serialize revision #67865563 from ruwiki', () => {
+    const doc = new DOMParser().parseFromString( xml67865563, 'application/xml' );
+    const dom = new Parser().parseDocument( doc );
+    assert.equal( wkt67865563, dom.toWikitext( false ) );
   } );
 
 } );

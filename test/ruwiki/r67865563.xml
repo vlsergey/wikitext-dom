@@ -1,0 +1,159 @@
+<root><template><title>НП
+</title><part><name>статус                   </name><equals>=</equals><value> [[Коммуна (Италия)|Коммуна]]
+</value></part><part><name>русское название         </name><equals>=</equals><value> Контрада
+</value></part><part><name>оригинальное название    </name><equals>=</equals><value> Contrada
+</value></part><part><name>подчинение               </name><equals>=</equals><value>
+</value></part><part><name>страна                   </name><equals>=</equals><value> Италия
+</value></part><part><name>герб                     </name><equals>=</equals><value>
+</value></part><part><name>флаг                     </name><equals>=</equals><value>
+</value></part><part><name>ширина герба             </name><equals>=</equals><value>
+</value></part><part><name>ширина флага             </name><equals>=</equals><value>
+</value></part><part><name>lat_dir </name><equals>=</equals><value> N</value></part><part><name>lat_deg </name><equals>=</equals><value> 40</value></part><part><name>lat_min </name><equals>=</equals><value> 52</value></part><part><name>lat_sec </name><equals>=</equals><value>1
+</value></part><part><name>lon_dir </name><equals>=</equals><value> E</value></part><part><name>lon_deg </name><equals>=</equals><value> 14</value></part><part><name>lon_min </name><equals>=</equals><value> 46</value></part><part><name>lon_sec </name><equals>=</equals><value>47
+</value></part><part><name>CoordAddon </name><equals>=</equals><value>
+</value></part><part><name>CoordScale </name><equals>=</equals><value> <comment>&lt;!-- * (дополнительные параметры координат)--&gt;</comment>
+</value></part><part><name>ЯндексКарта              </name><equals>=</equals><value> <comment>&lt;!-- (полная ссылка, начиная с http://)--&gt;</comment>
+</value></part><part><name>размер карты страны      </name><equals>=</equals><value> 280
+</value></part><part><name>размер карты региона     </name><equals>=</equals><value>
+</value></part><part><name>размер карты района      </name><equals>=</equals><value>
+</value></part><part><name>вид региона              </name><equals>=</equals><value> Административное деление Италии<template><title>!</title></template>Регион
+</value></part><part><name>регион </name><equals>=</equals><value> Кампания (Италия)<template><title>!</title></template>Кампания
+</value></part><part><name>регион в таблице </name><equals>=</equals><value>
+</value></part><part><name>вид района </name><equals>=</equals><value> Провинция
+</value></part><part><name>район </name><equals>=</equals><value> Авеллино (провинция)<template><title>!</title></template>Авеллино
+</value></part><part><name>район в таблице </name><equals>=</equals><value>
+</value></part><part><name>вид общины </name><equals>=</equals><value>
+</value></part><part><name>община </name><equals>=</equals><value>
+</value></part><part><name>община в таблице </name><equals>=</equals><value>
+</value></part><part><name>карта страны </name><equals>=</equals><value> <comment>&lt;!-- альтернативная, но с такими же координатами краёв --&gt;</comment>
+</value></part><part><name>карта региона </name><equals>=</equals><value> <comment>&lt;!-- альтернативная, но с такими же координатами краёв --&gt;</comment>
+</value></part><part><name>карта района </name><equals>=</equals><value> <comment>&lt;!-- альтернативная, но с такими же координатами краёв --&gt;</comment>
+</value></part><part><name>внутреннее деление </name><equals>=</equals><value>
+</value></part><part><name>вид главы </name><equals>=</equals><value>
+</value></part><part><name>глава </name><equals>=</equals><value>
+</value></part><part><name>дата основания </name><equals>=</equals><value>
+</value></part><part><name>первое упоминание </name><equals>=</equals><value>
+</value></part><part><name>прежние имена </name><equals>=</equals><value>
+</value></part><part><name>статус с </name><equals>=</equals><value>
+</value></part><part><name>площадь </name><equals>=</equals><value> 10
+</value></part><part><name>вид высоты </name><equals>=</equals><value>
+</value></part><part><name>высота центра НП </name><equals>=</equals><value> 420
+</value></part><part><name>климат </name><equals>=</equals><value>
+</value></part><part><name>официальный язык </name><equals>=</equals><value>
+</value></part><part><name>официальный язык-ref </name><equals>=</equals><value>
+</value></part><part><name>население </name><equals>=</equals><value> 2986
+</value></part><part><name>год переписи </name><equals>=</equals><value> 2008
+</value></part><part><name>плотность </name><equals>=</equals><value> 290
+</value></part><part><name>агломерация </name><equals>=</equals><value>
+</value></part><part><name>национальный состав </name><equals>=</equals><value>
+</value></part><part><name>конфессиональный состав </name><equals>=</equals><value>
+</value></part><part><name>этнохороним </name><equals>=</equals><value>
+</value></part><part><name>часовой пояс </name><equals>=</equals><value> +1
+</value></part><part><name>DST </name><equals>=</equals><value> есть
+</value></part><part><name>телефонный код </name><equals>=</equals><value> 0825
+</value></part><part><name>почтовый индекс </name><equals>=</equals><value> 83020
+</value></part><part><name>почтовые индексы </name><equals>=</equals><value>
+</value></part><part><name>автомобильный код </name><equals>=</equals><value>
+</value></part><part><name>вид идентификатора </name><equals>=</equals><value> Код ISTAT
+</value></part><part><name>цифровой идентификатор </name><equals>=</equals><value> 064029
+</value></part><part><name>категория в Commons </name><equals>=</equals><value> Contrada
+</value></part><part><name>сайт </name><equals>=</equals><value> http://www.comune.contrada.av.it/
+</value></part><part><name>язык сайта </name><equals>=</equals><value> it
+</value></part><part><name>язык сайта 2 </name><equals>=</equals><value>
+</value></part><part><name>язык сайта 3 </name><equals>=</equals><value>
+</value></part><part><name>язык сайта 4 </name><equals>=</equals><value>
+</value></part><part><name>язык сайта 5 </name><equals>=</equals><value>
+</value></part><part><name>add1n </name><equals>=</equals><value> Мэр коммуны
+</value></part><part><name>add1 </name><equals>=</equals><value> Antonio Iannaccone
+</value></part><part><name>add2n </name><equals>=</equals><value>
+</value></part><part><name>add2 </name><equals>=</equals><value>
+</value></part><part><name>add3n </name><equals>=</equals><value>
+</value></part><part><name>add3 </name><equals>=</equals><value>
+</value></part></template>
+'''Контрада''' (<template><title>lang-it</title><part><name index="1"/><value>Contrada</value></part></template>) — коммуна в [[Италия|Италии]], располагается в регионе [[Кампания (Италия)|Кампания]], в провинции [[Авеллино (провинция)|Авеллино]].
+
+Население составляет 2986 человек (2008 г.), плотность населения составляет 290 чел./км². Занимает площадь 10 км². Почтовый индекс — 83020. Телефонный код — 0825.
+
+Покровителем коммуны почитается святой [[архангел Михаил]].
+
+<h level="2" i="1">== Демография ==</h>
+Динамика населения:
+<ext><name>timeline</name><attr/><inner>
+Colors=
+  id:lightgrey value:gray(0.9)
+  id:darkgrey  value:gray(0.7)
+  id:sfondo value:rgb(1,1,1)
+  id:barra value:rgb(0.6,0.8,0.6)
+ImageSize = width:455 height:373
+PlotArea = left:50 bottom:50 top:30 right:30
+DateFormat = x.y
+Period = from:0 till:3000
+TimeAxis = orientation:vertical
+AlignBars = justify
+ScaleMajor = gridcolor:darkgrey increment:500 start:0
+ScaleMinor = gridcolor:lightgrey increment:100 start:0
+BackgroundColors = canvas:sfondo
+BarData=
+  bar:1861 text:1861
+  bar:1871 text:1871
+  bar:1881 text:1881
+  bar:1901 text:1901
+  bar:1911 text:1911
+  bar:1921 text:1921
+  bar:1931 text:1931
+  bar:1936 text:1936
+  bar:1951 text:1951
+  bar:1961 text:1961
+  bar:1971 text:1971
+  bar:1981 text:1981
+  bar:1991 text:1991
+  bar:2001 text:2001
+PlotData=
+  color:barra width:20 align:left
+  bar:1861 from:0 till:2109
+  bar:1871 from:0 till:2174
+  bar:1881 from:0 till:2388
+  bar:1901 from:0 till:2093
+  bar:1911 from:0 till:2155
+  bar:1921 from:0 till:2073
+  bar:1931 from:0 till:2350
+  bar:1936 from:0 till:2552
+  bar:1951 from:0 till:2961
+  bar:1961 from:0 till:2800
+  bar:1971 from:0 till:2387
+  bar:1981 from:0 till:2526
+  bar:1991 from:0 till:2638
+  bar:2001 from:0 till:2874
+PlotData=
+  bar:1861 at: 2109 fontsize:S text:2.109 shift:(-8,5)
+  bar:1871 at: 2174 fontsize:S text:2.174 shift:(-10,5)
+  bar:1881 at: 2388 fontsize:S text:2.388 shift:(-10,5)
+  bar:1901 at: 2093 fontsize:S text:2.093 shift:(-10,5)
+  bar:1911 at: 2155 fontsize:S text:2.155 shift:(-10,5)
+  bar:1921 at: 2073 fontsize:S text:2.073 shift:(-10,5)
+  bar:1931 at: 2350 fontsize:S text:2.350 shift:(-10,5)
+  bar:1936 at: 2552 fontsize:S text:2.552 shift:(-10,5)
+  bar:1951 at: 2961 fontsize:S text:2.961 shift:(-10,5)
+  bar:1961 at: 2800 fontsize:S text:2.800 shift:(-10,5)
+  bar:1971 at: 2387 fontsize:S text:2.387 shift:(-10,5)
+  bar:1981 at: 2526 fontsize:S text:2.526 shift:(-10,5)
+  bar:1991 at: 2638 fontsize:S text:2.638 shift:(-10,5)
+  bar:2001 at: 2874 fontsize:S text:2.874 shift:(-10,5)
+TextData=
+  fontsize:S pos:(20,20)
+  text:По данным  ISTAT
+</inner><close>&lt;/timeline&gt;</close></ext>
+
+<h level="2" i="2">== Администрация коммуны ==</h>
+* Телефон: 0825 674081
+* Электронная почта: info@comune.contrada.av.it
+* Официальный сайт: http://www.comune.contrada.av.it/
+
+<h level="2" i="3">== Ссылки ==</h>
+* [http://www.comune.contrada.av.it/ Официальный сайт населённого пункта <template><title>ref-it</title></template>]
+* [http://www.istat.it/ Национальный институт статистики <template><title>ref-it</title></template>]
+* [http://www.istat.it/english/ Национальный институт статистики <template><title>ref-en</title></template>]
+
+<template lineStart="1"><title>italy-geo-stub</title></template>
+<template lineStart="1"><title>Провинция Авеллино</title></template>
+</root>

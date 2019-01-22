@@ -49,10 +49,12 @@ module.exports = function (config) {
             include: /test/,
             exclude: /node_modules/,
             loader: "eslint-loader",
-            options: {
-              fix: true,
-            }
           },
+          {
+            test: /(\.xml|\.wikitext)$/,
+            loader: 'raw-loader',
+            include: /test/
+          }
          ]
       },
       resolve: {

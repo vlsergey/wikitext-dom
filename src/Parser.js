@@ -2,6 +2,7 @@ import Comment from './Comment';
 import Container from './Container';
 import expect from 'expect';
 import Extension from './Extension';
+import Header from './Header';
 import Ignore from './Ignore';
 import Root from './Root';
 import Template from './Template';
@@ -11,6 +12,7 @@ import TextNode from './TextNode';
 const KNOWN_NODES = {
   comment: Comment,
   ext: Extension,
+  h: Header,
   ignore: Ignore,
   root: Root,
   template: Template,

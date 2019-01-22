@@ -1,0 +1,158 @@
+{{НП
+|статус                   = [[Коммуна (Италия)|Коммуна]]
+|русское название         = Контрада
+|оригинальное название    = Contrada
+|подчинение               =
+|страна                   = Италия
+|герб                     =
+|флаг                     =
+|ширина герба             =
+|ширина флага             =
+|lat_dir = N|lat_deg = 40|lat_min = 52|lat_sec =1
+|lon_dir = E|lon_deg = 14|lon_min = 46|lon_sec =47
+|CoordAddon =
+|CoordScale = <!-- * (дополнительные параметры координат)-->
+|ЯндексКарта              = <!-- (полная ссылка, начиная с http://)-->
+|размер карты страны      = 280
+|размер карты региона     =
+|размер карты района      =
+|вид региона              = Административное деление Италии{{!}}Регион
+|регион = Кампания (Италия){{!}}Кампания
+|регион в таблице =
+|вид района = Провинция
+|район = Авеллино (провинция){{!}}Авеллино
+|район в таблице =
+|вид общины =
+|община =
+|община в таблице =
+|карта страны = <!-- альтернативная, но с такими же координатами краёв -->
+|карта региона = <!-- альтернативная, но с такими же координатами краёв -->
+|карта района = <!-- альтернативная, но с такими же координатами краёв -->
+|внутреннее деление =
+|вид главы =
+|глава =
+|дата основания =
+|первое упоминание =
+|прежние имена =
+|статус с =
+|площадь = 10
+|вид высоты =
+|высота центра НП = 420
+|климат =
+|официальный язык =
+|официальный язык-ref =
+|население = 2986
+|год переписи = 2008
+|плотность = 290
+|агломерация =
+|национальный состав =
+|конфессиональный состав =
+|этнохороним =
+|часовой пояс = +1
+|DST = есть
+|телефонный код = 0825
+|почтовый индекс = 83020
+|почтовые индексы =
+|автомобильный код =
+|вид идентификатора = Код ISTAT
+|цифровой идентификатор = 064029
+|категория в Commons = Contrada
+|сайт = http://www.comune.contrada.av.it/
+|язык сайта = it
+|язык сайта 2 =
+|язык сайта 3 =
+|язык сайта 4 =
+|язык сайта 5 =
+|add1n = Мэр коммуны
+|add1 = Antonio Iannaccone
+|add2n =
+|add2 =
+|add3n =
+|add3 =
+}}
+'''Контрада''' ({{lang-it|Contrada}}) — коммуна в [[Италия|Италии]], располагается в регионе [[Кампания (Италия)|Кампания]], в провинции [[Авеллино (провинция)|Авеллино]].
+
+Население составляет 2986 человек (2008 г.), плотность населения составляет 290 чел./км². Занимает площадь 10 км². Почтовый индекс — 83020. Телефонный код — 0825.
+
+Покровителем коммуны почитается святой [[архангел Михаил]].
+
+== Демография ==
+Динамика населения:
+<timeline>
+Colors=
+  id:lightgrey value:gray(0.9)
+  id:darkgrey  value:gray(0.7)
+  id:sfondo value:rgb(1,1,1)
+  id:barra value:rgb(0.6,0.8,0.6)
+ImageSize = width:455 height:373
+PlotArea = left:50 bottom:50 top:30 right:30
+DateFormat = x.y
+Period = from:0 till:3000
+TimeAxis = orientation:vertical
+AlignBars = justify
+ScaleMajor = gridcolor:darkgrey increment:500 start:0
+ScaleMinor = gridcolor:lightgrey increment:100 start:0
+BackgroundColors = canvas:sfondo
+BarData=
+  bar:1861 text:1861
+  bar:1871 text:1871
+  bar:1881 text:1881
+  bar:1901 text:1901
+  bar:1911 text:1911
+  bar:1921 text:1921
+  bar:1931 text:1931
+  bar:1936 text:1936
+  bar:1951 text:1951
+  bar:1961 text:1961
+  bar:1971 text:1971
+  bar:1981 text:1981
+  bar:1991 text:1991
+  bar:2001 text:2001
+PlotData=
+  color:barra width:20 align:left
+  bar:1861 from:0 till:2109
+  bar:1871 from:0 till:2174
+  bar:1881 from:0 till:2388
+  bar:1901 from:0 till:2093
+  bar:1911 from:0 till:2155
+  bar:1921 from:0 till:2073
+  bar:1931 from:0 till:2350
+  bar:1936 from:0 till:2552
+  bar:1951 from:0 till:2961
+  bar:1961 from:0 till:2800
+  bar:1971 from:0 till:2387
+  bar:1981 from:0 till:2526
+  bar:1991 from:0 till:2638
+  bar:2001 from:0 till:2874
+PlotData=
+  bar:1861 at: 2109 fontsize:S text:2.109 shift:(-8,5)
+  bar:1871 at: 2174 fontsize:S text:2.174 shift:(-10,5)
+  bar:1881 at: 2388 fontsize:S text:2.388 shift:(-10,5)
+  bar:1901 at: 2093 fontsize:S text:2.093 shift:(-10,5)
+  bar:1911 at: 2155 fontsize:S text:2.155 shift:(-10,5)
+  bar:1921 at: 2073 fontsize:S text:2.073 shift:(-10,5)
+  bar:1931 at: 2350 fontsize:S text:2.350 shift:(-10,5)
+  bar:1936 at: 2552 fontsize:S text:2.552 shift:(-10,5)
+  bar:1951 at: 2961 fontsize:S text:2.961 shift:(-10,5)
+  bar:1961 at: 2800 fontsize:S text:2.800 shift:(-10,5)
+  bar:1971 at: 2387 fontsize:S text:2.387 shift:(-10,5)
+  bar:1981 at: 2526 fontsize:S text:2.526 shift:(-10,5)
+  bar:1991 at: 2638 fontsize:S text:2.638 shift:(-10,5)
+  bar:2001 at: 2874 fontsize:S text:2.874 shift:(-10,5)
+TextData=
+  fontsize:S pos:(20,20)
+  text:По данным  ISTAT
+</timeline>
+
+== Администрация коммуны ==
+* Телефон: 0825 674081
+* Электронная почта: info@comune.contrada.av.it
+* Официальный сайт: http://www.comune.contrada.av.it/
+
+== Ссылки ==
+* [http://www.comune.contrada.av.it/ Официальный сайт населённого пункта {{ref-it}}]
+* [http://www.istat.it/ Национальный институт статистики {{ref-it}}]
+* [http://www.istat.it/english/ Национальный институт статистики {{ref-en}}]
+
+{{italy-geo-stub}}
+{{Провинция Авеллино}}

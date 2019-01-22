@@ -32,3 +32,12 @@ JavaScript library for working with Wikitext XML of wikitext content model.
   // Sending wikitext to server
   /* mw.Api().postWithToken(...) */
 ```
+
+## Supported Elements
+* ```comment``` (JavaScript class ```Comment```)
+* ```ext``` (JavaScript class ```Extension```)
+* ```h``` (JavaScript class ```Header```)
+* ```ignore``` (JavaScript class ```Ignore```)
+* ```root``` (JavaScript class ```Root```)
+* ```template``` (JavaScript class ```Template```)
+* ```tplarg``` (JavaScript class ```TemplateArgument```)
