@@ -53,7 +53,7 @@ export default class Timeline extends Extension {
       if ( str.startsWith( 'bar:' ) ) {
         const newBarId = str.substr( 4 );
         barAttributes = {};
-        perBarAttributes[newBarId] = barAttributes;
+        perBarAttributes[ newBarId ] = barAttributes;
       }
       const semicolonIndex = str.indexOf( ':' );
       if ( semicolonIndex !== -1 ) {

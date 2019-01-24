@@ -85,19 +85,19 @@ describe( 'Timeline', () => {
        + '</root>';
     const doc = new DOMParser().parseFromString( xml, 'application/xml' );
     const root = new Parser().parseDocument( doc );
-    const timeline = root.children[0]
+    const timeline = root.children[ 0 ];
 
     const expected = timeline.findPlotDataBarsAttributes();
 
-    assert.equal( expected["1879"].bar, "1879" );
-    assert.equal( expected["1879"].color, "gray1" );
-    assert.equal( expected["1879"].from, "0" );
-    assert.equal( expected["1879"].till, "119" );
+    assert.equal( expected[ '1879' ].bar, '1879' );
+    assert.equal( expected[ '1879' ].color, 'gray1' );
+    assert.equal( expected[ '1879' ].from, '0' );
+    assert.equal( expected[ '1879' ].till, '119' );
 
-    assert.equal( expected["2017"].bar, "2017" );
-    assert.equal( expected["2017"].color, "gray1" );
-    assert.equal( expected["2017"].from, "0" );
-    assert.equal( expected["2017"].till, "19" );
+    assert.equal( expected[ '2017' ].bar, '2017' );
+    assert.equal( expected[ '2017' ].color, 'gray1' );
+    assert.equal( expected[ '2017' ].from, '0' );
+    assert.equal( expected[ '2017' ].till, '19' );
   } );
 
   describe( 'Timeline.stripComments', () => {

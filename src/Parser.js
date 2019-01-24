@@ -39,11 +39,11 @@ export default class Parser {
     }
 
     let parsed = knownClass.parse( this, node );
-    if (parsed instanceof Extension) {
+    if ( parsed instanceof Extension ) {
       const extName = parsed.getNameAsString();
-      if (!!extName) {
-        const knownExtensionClass = KNOWN_EXTENSIONS[extName]
-        if (!!knownExtensionClass) {
+      if ( extName ) {
+        const knownExtensionClass = KNOWN_EXTENSIONS[ extName ];
+        if ( knownExtensionClass ) {
           parsed = knownExtensionClass.parse( this, node, parsed );
         }
       }
