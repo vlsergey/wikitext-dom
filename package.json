@@ -1,10 +1,10 @@
 {
   "name": "wikitext-dom",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Document Object Model for MediaWiki Wikitext XML",
   "main": "lib/wikitext-dom.js",
   "scripts": {
-    "build": "webpack --env dev && webpack --env build && npm run test",
+    "build": "eslint --fix webpack.config.js src/**/*.js test/**/*.js && webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
     "eslint": "eslint --fix webpack.config.js src/**/*.js test/**/*.js",
     "test": "karma start karma.conf.js --single-run",
