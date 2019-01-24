@@ -18,7 +18,7 @@ module.exports = function (config) {
 
     files: [
       'test/globals.js',
-      'test/**/*Test.js',
+      'test/**/TimelineTest.js',
     ],
 
     preprocessors: {

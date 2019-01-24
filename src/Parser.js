@@ -8,6 +8,7 @@ import Root from './Root';
 import Template from './Template';
 import TemplateArgument from './TemplateArgument';
 import TextNode from './TextNode';
+import Timeline from './extensions/Timeline';
 
 const KNOWN_NODES = {
   comment: Comment,
@@ -17,6 +18,10 @@ const KNOWN_NODES = {
   root: Root,
   template: Template,
   tplarg: TemplateArgument,
+};
+
+const KNOWN_EXTENSIONS = {
+  timeline: Timeline,
 };
 
 export default class Parser {
@@ -32,7 +37,19 @@ export default class Parser {
     if ( !knownClass ) {
       throw new Error( 'Uknown node type: ' + nodeName );
     }
-    return knownClass.parse( this, node );
+
+    let parsed = knownClass.parse( this, node );
+    if (parsed instanceof Extension) {
+      const extName = parsed.getNameAsString();
+      if (!!extName) {
+        const knownExtensionClass = KNOWN_EXTENSIONS[extName]
+        if (!!knownExtensionClass) {
+          parsed = knownExtensionClass.parse( this, node, parsed );
+        }
+      }
+    }
+
+    return parsed;
   }
 
   parseChildren( node ) {
