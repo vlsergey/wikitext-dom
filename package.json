@@ -1,6 +1,6 @@
 {
   "name": "wikitext-dom",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Document Object Model for MediaWiki Wikitext XML",
   "main": "lib/wikitext-dom.js",
   "scripts": {
@@ -11,7 +11,6 @@
     "test": "karma start karma.conf.js --single-run",
     "test:watch": "karma start karma.conf.js --no-single-run",
     "repl": "node -i -e \"$(< ./lib/wikitext-dom.js)\"",
-
     "preversion": "npm run eslint:check && npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"
