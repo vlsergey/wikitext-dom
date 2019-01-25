@@ -32,17 +32,26 @@ export default class Template extends Container {
     return new Template( children );
   }
 
-  findTitleText() {
-    if ( this.children && this.children[ 0 ] instanceof TemplateTitle ) {
-      const asText = this.children[ 0 ].getTextIfOnlyText();
-      if ( asText ) {
-        return asText.trim();
-      }
-    }
+  getTitleAsString() {
+    return this.getChildByClassAsString( TemplateTitle );
+  }
+
+  getValueByNameAsString( partName ) {
+    const part = this.findPartByNameText( partName );
+    if ( !part ) return null;
+    return part.getValueAsString();
+  }
+
+  findPartNamesAsStrings() {
+    return this.children
+      .filter( child => child instanceof TemplatePart )
+      .map( child => child.getNameAsString() )
+      .filter( name => name !== null );
   }
 
   findPartByNameText( name ) {
     expect( name ).toBeA( 'string' );
+    name = name.trim();
 
     return this.children
       .filter( child => child instanceof TemplatePart )
