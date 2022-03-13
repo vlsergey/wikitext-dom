@@ -10,15 +10,16 @@ import TemplateArgument from './TemplateArgument';
 import TextNode from './TextNode';
 import WikiDomNode from './WikiDomNode';
 
-declare type Class<T = any> = new (...args: any[]) => T;
-declare type WithParse = {
-  parse(parser : Parser, node : Element) : WikiDomNode;
-};
-declare type WithExtensionParse = {
-  parseAsExtensionOf(parser : Parser, node : Element, asExtensionOf : Extension) : Extension;
-};
+type Class<T = any> = new (...args: any[]) => T; // eslint-disable-line @typescript-eslint/no-explicit-any
 
-const KNOWN_NODES : {[name : string ] : Class<WikiDomNode> & WithParse} = {
+declare interface WithParse {
+  parse: (parser: Parser, node: Element) => WikiDomNode;
+}
+declare interface WithExtensionParse {
+  parseAsExtensionOf: (parser: Parser, node: Element, asExtensionOf: Extension) => Extension;
+}
+
+const KNOWN_NODES: Record<string, Class<WikiDomNode> & WithParse> = {
   comment: Comment,
   ext: Extension,
   h: Header,
@@ -28,7 +29,7 @@ const KNOWN_NODES : {[name : string ] : Class<WikiDomNode> & WithParse} = {
   tplarg: TemplateArgument,
 };
 
-const KNOWN_EXTENSIONS: {[name : string ] : Class<WikiDomNode> & WithExtensionParse} = {
+const KNOWN_EXTENSIONS: Record<string, Class<WikiDomNode> & WithExtensionParse> = {
   timeline: Timeline,
 };
 
@@ -36,7 +37,7 @@ export default class Parser {
 
   parse (node: Text | Element) {
     if (node instanceof Text) {
-      return new TextNode(node.textContent || "");
+      return new TextNode(node.textContent || '');
     }
 
     const {nodeName} = node;

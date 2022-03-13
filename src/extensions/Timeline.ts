@@ -8,7 +8,7 @@ export default class Timeline extends Extension {
     code = Timeline.stripComments(code);
 
     const regexp = /(\n|^)([^\s]\w+)\s*=/;
-    const splitted : string[] = code.split(regexp);
+    const splitted: string[] = code.split(regexp);
     const index = splitted.findIndex(value => value === command);
     if (index === -1 || index >= splitted.length - 1) return null;
     let commandData = splitted[index + 1] as string;
@@ -19,11 +19,11 @@ export default class Timeline extends Extension {
     return commandData;
   }
 
-  static parseAsExtensionOf(_parser : Parser, _element :Element, asExtensionOf : Extension) {
+  static parseAsExtensionOf (_parser: Parser, _element: Element, asExtensionOf: Extension) {
     return new Timeline(asExtensionOf.children);
   }
 
-  static stripComments (text : string) {
+  static stripComments (text: string) {
     return text
       .replace(/#>(.|\r|\n)*<#/gm, '')
       .replace(/#(.|)*(\r?\n)/gm, '$2');
@@ -33,10 +33,10 @@ export default class Timeline extends Extension {
     return Timeline.findCommandData(this.getInnerAsString(), 'PlotData');
   }
 
-  findPlotDataBarsAttributes () : null | {[key: string] : {[key: string] : string}} {
+  findPlotDataBarsAttributes (): null | Record<string, Record<string, string>> {
     const plotData = this.findPlotData();
     if (!plotData) return null;
-    let splitted : string[] = plotData.split(/\s+/);
+    let splitted: string[] = plotData.split(/\s+/);
 
     // join texts (quotas)
     for (let i = 1; i < splitted.length; i++) {
@@ -48,8 +48,8 @@ export default class Timeline extends Extension {
       }
     }
 
-    const perBarAttributes : {[key: string] : {[key: string] : string}} = {};
-    let barAttributes : {[key: string] : string} = {};
+    const perBarAttributes: Record<string, Record<string, string>> = {};
+    let barAttributes: Record<string, string> = {};
     splitted.forEach(str => {
       if (str.startsWith('bar:')) {
         const newBarId = str.substr(4);

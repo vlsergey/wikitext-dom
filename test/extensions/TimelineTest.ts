@@ -1,4 +1,5 @@
 import {assert} from 'chai';
+
 import Timeline from '../../src/extensions/Timeline';
 import Parser from '../../src/Parser';
 
@@ -85,7 +86,7 @@ describe('Timeline', () => {
        + '</root>';
     const doc = new DOMParser().parseFromString(xml, 'application/xml');
     const root = new Parser().parseDocument(doc);
-    let timeline = root.children[0] as Timeline;
+    const timeline = root.children[0] as Timeline;
 
     const expected = timeline.findPlotDataBarsAttributes();
 

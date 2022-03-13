@@ -1,4 +1,5 @@
 import {assert} from 'chai';
+
 import Parser from '../src/Parser';
 import TemplateArgument from '../src/TemplateArgument';
 

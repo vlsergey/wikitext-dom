@@ -1,6 +1,6 @@
 
 interface WikiDomNode {
-  toWikitext(stripComments: boolean): string
+  toWikitext: (stripComments: boolean) => string;
 }
 
 export default WikiDomNode;

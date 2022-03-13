@@ -5,7 +5,7 @@ import WikiDomNode from './WikiDomNode';
 
 export default class TemplateArgument extends Container {
 
-  static parse (parser : Parser, node : Element) {
+  static parse (parser: Parser, node: Element) {
     const children = [];
 
     for (const child of Array.from(node.children)) {
@@ -26,7 +26,7 @@ export default class TemplateArgument extends Container {
     return new TemplateArgument(children);
   }
 
-  findTitleText () : null | string {
+  findTitleText (): null | string {
     if (this.children && this.children[0] instanceof TemplateArgumentTitle) {
       const asText = this.children[0].getTextIfOnlyText();
       if (asText) {
@@ -36,7 +36,7 @@ export default class TemplateArgument extends Container {
     return null;
   }
 
-  findPartByNameText (name : string) : null | TemplateArgumentPart{
+  findPartByNameText (name: string): null | TemplateArgumentPart {
     for (const child of this.children) {
       if (child instanceof TemplateArgumentPart) {
         if ((child.getNameAsString() || '').trim() === name) {
@@ -67,17 +67,17 @@ export default class TemplateArgument extends Container {
   }
 
   padValues () {
-    this.getChildrenByClass(TemplateArgumentPart).forEach( part => {
+    this.getChildrenByClass(TemplateArgumentPart).forEach(part => {
       const valueNode = part.getValueAsNode();
       if (!valueNode) return;
-      if (valueNode.toWikitext(true).trim().indexOf('\n') !== -1) return;
+      if (valueNode.toWikitext(true).trim().includes('\n')) return;
 
       valueNode.trim();
       part.setValueAsNode(new Container([new TextNode(' '), ...valueNode.children, new TextNode('\n')]));
-    })
+    });
   }
 
-  override toWikitext (stripComments : boolean) {
+  override toWikitext (stripComments: boolean) {
     return '{{{' + this.children
       .map(child => child.toWikitext(stripComments))
       .join('|') + '}}}';
@@ -91,8 +91,8 @@ export class TemplateArgumentTitle extends Container {
 
 export class TemplateArgumentPart extends Container {
 
-  static parse (parser : Parser, node : Node) {
-    let index : null | string = null;
+  static parse (parser: Parser, node: Node) {
+    let index: null | string = null;
     const children = [];
 
     for (let i = 0; i < node.childNodes.length; i++) {
@@ -125,11 +125,11 @@ export class TemplateArgumentPart extends Container {
 
   index: null | string = null;
 
-  getNameAsString () : null | string {
+  getNameAsString (): null | string {
     return this.getFirstChildByClass(TemplateArgumentPartName)?.getTextIfOnlyText() || null;
   }
 
-  setNameAsNode (wikiDomNode : WikiDomNode) {
+  setNameAsNode (wikiDomNode: WikiDomNode) {
     const existing = this.children.find(child => child instanceof TemplateArgumentPartName);
     if (existing) {
       (existing as TemplateArgumentPartName).children = [wikiDomNode];
@@ -138,19 +138,19 @@ export class TemplateArgumentPart extends Container {
     }
   }
 
-  setNameAsString (str : string) : void {
+  setNameAsString (str: string): void {
     this.setNameAsNode(new TextNode(str));
   }
 
-  getValueAsNode () : null | TemplateArgumentPartValue {
+  getValueAsNode (): null | TemplateArgumentPartValue {
     return this.getChildrenByClass(TemplateArgumentPartValue)?.[0] || null;
   }
 
-  getValueAsString () : null | string {
+  getValueAsString (): null | string {
     return this.getFirstChildByClass(TemplateArgumentPartValue)?.getTextIfOnlyText() || null;
   }
 
-  setValueAsNode (wikiDomNode : WikiDomNode) {
+  setValueAsNode (wikiDomNode: WikiDomNode) {
     const existing = this.children.find(child => child instanceof TemplateArgumentPartValue);
     if (existing) {
       (existing as TemplateArgumentPartValue).children = [wikiDomNode];
@@ -159,7 +159,7 @@ export class TemplateArgumentPart extends Container {
     }
   }
 
-  setValueAsString (str : string) {
+  setValueAsString (str: string) {
     this.setValueAsNode(new TextNode(str));
   }
 

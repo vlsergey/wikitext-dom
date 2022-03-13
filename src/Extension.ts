@@ -32,15 +32,15 @@ export default class Extension extends Container {
     return new Extension(children);
   }
 
-  getCloseAsString () : null | string {
+  getCloseAsString (): null | string {
     return this.getFirstChildByClass(ExtensionClose)?.getTextIfOnlyText() || null;
   }
 
-  getNameAsString () : null | string{
+  getNameAsString (): null | string {
     return this.getFirstChildByClass(ExtensionName)?.getTextIfOnlyText() || null;
   }
 
-  getInnerAsString () : null | string{
+  getInnerAsString (): null | string {
     return this.getFirstChildByClass(ExtensionInner)?.getTextIfOnlyText() || null;
   }
 

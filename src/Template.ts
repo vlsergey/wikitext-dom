@@ -5,7 +5,7 @@ import WikiDomNode from './WikiDomNode';
 
 export default class Template extends Container {
 
-  static parse (parser : Parser, node : Element) {
+  static parse (parser: Parser, node: Element) {
     const children = [];
 
     for (let i = 0; i < node.childNodes.length; i++) {
@@ -29,11 +29,11 @@ export default class Template extends Container {
     return new Template(children);
   }
 
-  getTitleAsString () : null | string{
+  getTitleAsString (): null | string {
     return this.getFirstChildByClass(TemplateTitle)?.getTextIfOnlyText()?.trim() || null;
   }
 
-  getValueByNameAsString (partName : string) {
+  getValueByNameAsString (partName: string) {
     const part = this.findPartByNameText(partName);
     if (!part) return null;
     return part.getValueAsString();
@@ -45,7 +45,7 @@ export default class Template extends Container {
       .filter(name => name !== null);
   }
 
-  findPartByNameText (name : string) : null | TemplatePart {
+  findPartByNameText (name: string): null | TemplatePart {
     name = name.trim();
 
     return this.getChildrenByClass(TemplatePart)
@@ -53,7 +53,7 @@ export default class Template extends Container {
       || null;
   }
 
-  getValuesAsNodesArray () : WikiDomNode[] {
+  getValuesAsNodesArray (): WikiDomNode[] {
     return this.getChildrenByClass(TemplatePart)
       .flatMap(child => child.children)
       .filter(child => child instanceof TemplatePartValue)
@@ -66,7 +66,7 @@ export default class Template extends Container {
     if (hasNonTextNames) return;
 
     const maxTrimmedLength = 1 + this.getChildrenByClass(TemplatePart)
-      .map(part => (part.getNameAsString() || "").trim().length)
+      .map(part => (part.getNameAsString() || '').trim().length)
       .reduce((acc, cur) => Math.max(acc, cur), 0);
 
     this.getChildrenByClass(TemplatePart)
@@ -80,15 +80,15 @@ export default class Template extends Container {
   }
 
   padValues () {
-    this.getChildrenByClass(TemplatePart).forEach( part => {
+    this.getChildrenByClass(TemplatePart).forEach(part => {
       const valueNode = part.getValueAsNode();
       if (!valueNode) return;
-      if (valueNode.toWikitext(true).trim().indexOf('\n') !== -1) return;
+      if (valueNode.toWikitext(true).trim().includes('\n')) return;
 
       valueNode.trim();
       part.setValueAsNodes([new TextNode(' '), ...valueNode.children, new TextNode('\n')]);
       part.mergeTextNodes();
-    } )
+    });
   }
 
   override toWikitext (stripComments: boolean) {
@@ -104,7 +104,7 @@ export class TemplateTitle extends Container {}
 export class TemplatePart extends Container {
 
   static parse (parser: Parser, node: Element) {
-    let index : null | string = null;
+    let index: null | string = null;
     const children = [];
 
     for (const child of Array.from(node.children)) {
@@ -134,11 +134,11 @@ export class TemplatePart extends Container {
 
   index: string | null = null;
 
-  getNameAsString () : null | string {
+  getNameAsString (): null | string {
     return this.getFirstChildByClass(TemplatePartName)?.getTextIfOnlyText() || null;
   }
 
-  setNameAsNode (wikiDomNode : WikiDomNode) : void {
+  setNameAsNode (wikiDomNode: WikiDomNode): void {
     const existing = this.getFirstChildByClass(TemplatePartName);
     if (existing) {
       existing.children = [wikiDomNode];
@@ -147,17 +147,17 @@ export class TemplatePart extends Container {
     }
   }
 
-  setNameAsString (str : string) : void {
+  setNameAsString (str: string): void {
     this.setNameAsNode(new TextNode(str));
   }
 
   getValueAsNode = () => this.getFirstChildByClass(TemplatePartValue);
 
-  getValueAsString () : null | string {
+  getValueAsString (): null | string {
     return this.getFirstChildByClass(TemplatePartValue)?.getTextIfOnlyText() || null;
   }
 
-  setValueAsNode (wikiDomNode : WikiDomNode) : void {
+  setValueAsNode (wikiDomNode: WikiDomNode): void {
     const existing = this.getValueAsNode();
     if (existing) {
       existing.children = [wikiDomNode];
@@ -166,7 +166,7 @@ export class TemplatePart extends Container {
     }
   }
 
-  setValueAsNodes (wikiDomNodes: WikiDomNode[]) : void {
+  setValueAsNodes (wikiDomNodes: WikiDomNode[]): void {
     const existing = this.getFirstChildByClass(TemplatePartValue);
     if (existing) {
       existing.children = [...wikiDomNodes];
@@ -175,7 +175,7 @@ export class TemplatePart extends Container {
     }
   }
 
-  setValueAsString (str : string) : void {
+  setValueAsString (str: string): void {
     this.setValueAsNode(new TextNode(str));
   }
 

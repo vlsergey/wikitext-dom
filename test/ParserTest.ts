@@ -1,9 +1,9 @@
 import {assert} from 'chai';
-import Parser from '../src/Parser';
 
-// @ts-ignore
+import Parser from '../src/Parser';
+// @ts-expect-error TypeScript doesn't know about text file
 import wkt67865563 from './ruwiki/r67865563.wikitext';
-// @ts-ignore
+// @ts-expect-error TypeScript doesn't know about text file
 import xml67865563 from './ruwiki/r67865563.xml';
 
 describe('Parser', () => {
@@ -23,9 +23,9 @@ describe('Parser', () => {
   });
 
   it('Can parse and serialize revision #67865563 from ruwiki', () => {
-    const doc = new DOMParser().parseFromString(xml67865563, 'application/xml');
+    const doc = new DOMParser().parseFromString(xml67865563 as string, 'application/xml');
     const dom = new Parser().parseDocument(doc);
-    assert.equal(dom.toWikitext(false).replaceAll("\r\n", "\n"), wkt67865563.replaceAll("\r\n", "\n"));
+    assert.equal(dom.toWikitext(false).replaceAll('\r\n', '\n'), (wkt67865563 as string).replaceAll('\r\n', '\n'));
   });
 
 });
