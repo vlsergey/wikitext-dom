@@ -1,9 +1,9 @@
-import assert from 'assert';
-import Container from 'Container';
-import Parser from 'Parser';
-import Template from 'Template';
+import {assert} from 'chai';
+import Container from '../src/Container';
+import Parser from '../src/Parser';
+import Template from '../src/Template';
 
-describe( 'Container', () => {
+describe('Container', () => {
 
   const sourceXml = '<root><template><title>Навигационная полоса\n</title>'
     + '<part><name>имя </name><equals>=</equals><value>Муниципалитеты микрорегиона Умаризал\n</value></part>'
@@ -14,20 +14,17 @@ describe( 'Container', () => {
     + '</template>'
     + '<ignore>&lt;noinclude&gt;</ignore>\n[[Категория:Навигационные шаблоны:География Бразилии|Умаризал]]\n<ignore>&lt;/noinclude&gt;</ignore>\n</root>';
 
-  const doc = new DOMParser().parseFromString( sourceXml, 'application/xml' );
-  const root = new Parser().parseDocument( doc );
+  const doc = new DOMParser().parseFromString(sourceXml, 'application/xml');
+  const root = new Parser().parseDocument(doc);
 
-  it ( 'Can use getChildByClass', () => {
-    assert( root instanceof Container );
+  it('Can use getChildByClass', () => {
+    assert(root instanceof Container);
 
-    const templates = root.getChildByClass( Template );
-    assert.equal( 2, templates.length );
+    const templates = root.getChildrenByClassR(Template);
+    assert.equal(2, templates.length);
 
-    assert( templates[ 0 ] instanceof Template );
-    assert.equal( templates[ 0 ].findTitleText(), 'Навигационная полоса' );
+    assert.equal(templates[0]?.getTitleAsString(), 'Навигационная полоса');
+    assert.equal(templates[1]?.getTitleAsString(), 'цвет');
+  });
 
-    assert( templates[ 1 ] instanceof Template );
-    assert.equal( templates[ 1 ].findTitleText(), 'цвет' );
-  } );
-
-} );
+});

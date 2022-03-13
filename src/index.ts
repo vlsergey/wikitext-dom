@@ -9,5 +9,5 @@ import TemplateArgument from './TemplateArgument';
 import TextNode from './TextNode';
 import WikiDomNode from './WikiDomNode';
 
-export { Comment, Container, Extension, Ignore, Parser, Root };
-export { Template, TemplateArgument, TextNode, WikiDomNode };
+export {Comment, Container, Extension, Ignore, Parser, Root};
+export {Template, TemplateArgument, TextNode, WikiDomNode};

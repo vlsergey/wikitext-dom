@@ -2,8 +2,6 @@
 
 JavaScript library for working with Wikitext XML of wikitext content model.
 
-![Travis](https://travis-ci.org/vlsergey/wikitext-dom.svg?branch=master)
-
 ## Starter example
 
 ```js

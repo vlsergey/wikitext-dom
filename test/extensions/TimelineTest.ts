@@ -1,12 +1,12 @@
-import assert from 'assert';
-import Parser from 'Parser';
-import Timeline from 'extensions/Timeline';
+import {assert} from 'chai';
+import Timeline from '../../src/extensions/Timeline';
+import Parser from '../../src/Parser';
 
 // Test code from https://www.mediawiki.org/wiki/Extension:EasyTimeline/syntax
-describe( 'Timeline', () => {
+describe('Timeline', () => {
 
-  describe( 'Timeline.findCommandData', () => {
-    it ( 'Can find plot data', () => {
+  describe('Timeline.findCommandData', () => {
+    it('Can find plot data', () => {
       const src = '# In this example two sets of bars are drawn, in red and blue respectively,\r\n'
         + '# but in each set one bar (marking war periods) will be drawn in green.\r\n'
         + '\r\n'
@@ -30,7 +30,7 @@ describe( 'Timeline', () => {
         + 'TextData =                                           # now PlotData is considered complete\r\n'
         + '   tabs:...etc\r\n';
 
-      const actual = Timeline.findCommandData( src, 'PlotData' );
+      const actual = Timeline.findCommandData(src, 'PlotData');
       const expected = ''
         + '  color:red fontsize:S                               \r\n'
         + '  bar:USSR from:1919 till:1922 text:Lenin            \r\n'
@@ -46,12 +46,12 @@ describe( 'Timeline', () => {
         + '\r\n'
         + '\r\n'
         + '   bar:US from:1923 till:1929 text:Coolidge           ';
-      assert.equal( actual, expected );
-    } );
+      assert.equal(actual, expected);
+    });
 
-  } );
+  });
 
-  describe( 'Timeline.findPlotDataBarsAttributes', () => {
+  describe('Timeline.findPlotDataBarsAttributes', () => {
     const xml = '<root><ext><name>timeline</name><attr/><inner>\r\n'
        + 'ImageSize = width:380 height:300\r\n'
        + 'PlotArea = left:30 right:40 top:20 bottom:20\r\n'
@@ -83,47 +83,47 @@ describe( 'Timeline', () => {
        + '   from:0 till:19 width:15 text:19 textcolor:red fontsize:8px\r\n'
        + '</inner><close>&lt;/timeline&gt;</close></ext>\r\n'
        + '</root>';
-    const doc = new DOMParser().parseFromString( xml, 'application/xml' );
-    const root = new Parser().parseDocument( doc );
-    const timeline = root.children[ 0 ];
+    const doc = new DOMParser().parseFromString(xml, 'application/xml');
+    const root = new Parser().parseDocument(doc);
+    let timeline = root.children[0] as Timeline;
 
     const expected = timeline.findPlotDataBarsAttributes();
 
-    assert.equal( expected[ '1879' ].bar, '1879' );
-    assert.equal( expected[ '1879' ].color, 'gray1' );
-    assert.equal( expected[ '1879' ].from, '0' );
-    assert.equal( expected[ '1879' ].till, '119' );
+    assert.equal(expected?.['1879']?.bar, '1879');
+    assert.equal(expected?.['1879']?.color, 'gray1');
+    assert.equal(expected?.['1879']?.from, '0');
+    assert.equal(expected?.['1879']?.till, '119');
 
-    assert.equal( expected[ '2017' ].bar, '2017' );
-    assert.equal( expected[ '2017' ].color, 'gray1' );
-    assert.equal( expected[ '2017' ].from, '0' );
-    assert.equal( expected[ '2017' ].till, '19' );
-  } );
+    assert.equal(expected?.['2017']?.bar, '2017');
+    assert.equal(expected?.['2017']?.color, 'gray1');
+    assert.equal(expected?.['2017']?.from, '0');
+    assert.equal(expected?.['2017']?.till, '19');
+  });
 
-  describe( 'Timeline.stripComments', () => {
+  describe('Timeline.stripComments', () => {
 
-    it ( 'Can correctly strip comments (short)', () => {
+    it('Can correctly strip comments (short)', () => {
       const src = '  color:red fontsize:S    # set defaults\r\n';
-      const actual = Timeline.stripComments( src );
+      const actual = Timeline.stripComments(src);
       const expected = '  color:red fontsize:S    \r\n';
-      assert.equal( actual, expected );
-    } );
+      assert.equal(actual, expected);
+    });
 
-    it ( 'Can correctly strip comments (multiline short)', () => {
+    it('Can correctly strip comments (multiline short)', () => {
       const src = '  qwerty #> comment here <# uiop\r\n';
-      const actual = Timeline.stripComments( src );
+      const actual = Timeline.stripComments(src);
       const expected = '  qwerty  uiop\r\n';
-      assert.equal( actual, expected );
-    } );
+      assert.equal(actual, expected);
+    });
 
-    it ( 'Can correctly strip comments (multiline long)', () => {
+    it('Can correctly strip comments (multiline long)', () => {
       const src = 'line 1\r\n#> line 2\r\n line 3<#\r\nline 4';
-      const actual = Timeline.stripComments( src );
+      const actual = Timeline.stripComments(src);
       const expected = 'line 1\r\n\r\nline 4';
-      assert.equal( actual, expected );
-    } );
+      assert.equal(actual, expected);
+    });
 
-    it ( 'Can correctly strip comments (full)', () => {
+    it('Can correctly strip comments (full)', () => {
       const src = '# In this example two sets of bars are drawn, in red and blue respectively,\r\n'
         + '# but in each set one bar (marking war periods) will be drawn in green.\r\n'
         + '\r\n'
@@ -147,7 +147,7 @@ describe( 'Timeline', () => {
         + 'TextData =                                           # now PlotData is considered complete\r\n'
         + '   tabs:...etc\r\n';
 
-      const actual = Timeline.stripComments( src );
+      const actual = Timeline.stripComments(src);
 
       const expected = '\r\n'
         + '\r\n'
@@ -171,9 +171,9 @@ describe( 'Timeline', () => {
         + 'TextData =                                           \r\n'
         + '   tabs:...etc\r\n';
 
-      assert.equal( actual, expected );
-    } );
+      assert.equal(actual, expected);
+    });
 
-  } );
+  });
 
-} );
+});

@@ -1,10 +1,11 @@
-import assert from 'assert';
-import Parser from 'Parser';
-import Template from 'Template';
+import {assert} from 'chai';
 
-describe( 'Template', () => {
+import Parser from '../src/Parser';
+import Template from '../src/Template';
 
-  it ( 'Can parse navigation template and access it\'s properties', () => {
+describe('Template', () => {
+
+  it('Can parse navigation template and access it\'s properties', () => {
     const sourceXml = '<root><template><title>Навигационная полоса\n</title>'
       + '<part><name>имя </name><equals>=</equals><value>Муниципалитеты микрорегиона Умаризал\n</value></part>'
       + '<part><name>цвет</name><equals>=</equals><value><template><title>цвет</title>'
@@ -14,12 +15,14 @@ describe( 'Template', () => {
       + '</template>'
       + '<ignore>&lt;noinclude&gt;</ignore>\n[[Категория:Навигационные шаблоны:География Бразилии|Умаризал]]\n<ignore>&lt;/noinclude&gt;</ignore>\n</root>';
 
-    const doc = new DOMParser().parseFromString( sourceXml, 'application/xml' );
-    const root = new Parser().parseDocument( doc );
+    const doc = new DOMParser().parseFromString(sourceXml, 'application/xml');
+    const root = new Parser().parseDocument(doc);
 
-    const template = root.children[ 0 ];
-    assert( template instanceof Template );
-    assert.equal( template.findTitleText(), 'Навигационная полоса' );
-  } );
+    const template = root.children[0];
+    assert(template instanceof Template);
 
-} );
+    const asTemplate = template as Template;
+    assert.equal(asTemplate.getTitleAsString(), 'Навигационная полоса');
+  });
+
+});

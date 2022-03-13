@@ -1,12 +1,14 @@
-import assert from 'assert';
-import Parser from 'Parser';
+import {assert} from 'chai';
+import Parser from '../src/Parser';
 
+// @ts-ignore
 import wkt67865563 from './ruwiki/r67865563.wikitext';
+// @ts-ignore
 import xml67865563 from './ruwiki/r67865563.xml';
 
-describe( 'Parser', () => {
+describe('Parser', () => {
 
-  it ( 'Can parse navigation template', () => {
+  it('Can parse navigation template', () => {
     const sourceXml = '<root><template><title>Навигационная полоса\n</title>'
       + '<part><name>имя </name><equals>=</equals><value>Муниципалитеты микрорегиона Умаризал\n</value></part>'
       + '<part><name>цвет</name><equals>=</equals><value><template><title>цвет</title>'
@@ -16,14 +18,14 @@ describe( 'Parser', () => {
       + '</template>'
       + '<ignore>&lt;noinclude&gt;</ignore>\n[[Категория:Навигационные шаблоны:География Бразилии|Умаризал]]\n<ignore>&lt;/noinclude&gt;</ignore>\n</root>';
 
-    const doc = new DOMParser().parseFromString( sourceXml, 'application/xml' );
-    new Parser().parseDocument( doc );
-  } );
+    const doc = new DOMParser().parseFromString(sourceXml, 'application/xml');
+    new Parser().parseDocument(doc);
+  });
 
-  it ( 'Can parse and serialize revision #67865563 from ruwiki', () => {
-    const doc = new DOMParser().parseFromString( xml67865563, 'application/xml' );
-    const dom = new Parser().parseDocument( doc );
-    assert.equal( wkt67865563, dom.toWikitext( false ) );
-  } );
+  it('Can parse and serialize revision #67865563 from ruwiki', () => {
+    const doc = new DOMParser().parseFromString(xml67865563, 'application/xml');
+    const dom = new Parser().parseDocument(doc);
+    assert.equal(dom.toWikitext(false).replaceAll("\r\n", "\n"), wkt67865563.replaceAll("\r\n", "\n"));
+  });
 
-} );
+});
