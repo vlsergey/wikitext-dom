@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/vlsergey/wikitext-dom#readme",
   "devDependencies": {
-    "@vlsergey/js-config": "^10.0.0",
+    "@vlsergey/js-config": "^10.1.0",
     "raw-loader": "^4.0.2"
   },
   "nyc": {
