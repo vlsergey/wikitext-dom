@@ -2,7 +2,8 @@
   "name": "wikitext-dom",
   "version": "0.1.0",
   "description": "Document Object Model for MediaWiki Wikitext XML",
-  "main": "lib/wikitext-dom.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "scripts": {
     "clean": "rimraf lib/*",
     "build": "cross-env NODE_ENV=production tsc -p ./src/tsconfig-cjs.json && cross-env NODE_ENV=production tsc -p ./src/tsconfig-esm.json",
