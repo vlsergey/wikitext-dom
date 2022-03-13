@@ -29,11 +29,15 @@ export default class Template extends Container {
     return new Template(children);
   }
 
+  getTemplateParts (): TemplatePart[] {
+    return this.getChildrenByClass(TemplatePart);
+  }
+
   getTitleAsString (): null | string {
     return this.getFirstChildByClass(TemplateTitle)?.getTextIfOnlyText()?.trim() || null;
   }
 
-  getValueByNameAsString (partName: string) {
+  getValueByNameAsString (partName: string): null | string {
     const part = this.findPartByNameText(partName);
     if (!part) return null;
     return part.getValueAsString();
