@@ -1,6 +1,6 @@
 {
   "name": "wikitext-dom",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Document Object Model for MediaWiki Wikitext XML",
   "main": "lib/wikitext-dom.js",
   "scripts": {
